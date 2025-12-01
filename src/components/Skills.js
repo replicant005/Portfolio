@@ -18,7 +18,10 @@ const Skills = () => {
       });
     }, observerOptions);
 
-    skillCategoriesRef.current.forEach(category => {
+    // Capture current refs at the start
+    const currentCategories = [...skillCategoriesRef.current].filter(category => category !== null);
+
+    currentCategories.forEach(category => {
       if (category) {
         category.style.opacity = '0';
         category.style.transform = 'translateY(30px)';
@@ -28,8 +31,9 @@ const Skills = () => {
     });
 
     return () => {
-      skillCategoriesRef.current.forEach(category => {
-        if (category) observer.unobserve(category);
+      // Use captured categories for cleanup
+      currentCategories.forEach(category => {
+        observer.unobserve(category);
       });
     };
   }, []);

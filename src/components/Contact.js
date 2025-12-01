@@ -18,7 +18,10 @@ const Contact = () => {
       });
     }, observerOptions);
 
-    contactCardsRef.current.forEach(card => {
+    // Capture current refs at the start
+    const currentCards = [...contactCardsRef.current].filter(card => card !== null);
+
+    currentCards.forEach(card => {
       if (card) {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
@@ -28,8 +31,9 @@ const Contact = () => {
     });
 
     return () => {
-      contactCardsRef.current.forEach(card => {
-        if (card) observer.unobserve(card);
+      // Use captured cards for cleanup
+      currentCards.forEach(card => {
+        observer.unobserve(card);
       });
     };
   }, []);

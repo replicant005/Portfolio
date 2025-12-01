@@ -18,7 +18,10 @@ const Experience = () => {
       });
     }, observerOptions);
 
-    timelineItemsRef.current.forEach(item => {
+    // Capture current refs at the start
+    const currentItems = [...timelineItemsRef.current].filter(item => item !== null);
+
+    currentItems.forEach(item => {
       if (item) {
         item.style.opacity = '0';
         item.style.transform = 'translateY(30px)';
@@ -28,8 +31,9 @@ const Experience = () => {
     });
 
     return () => {
-      timelineItemsRef.current.forEach(item => {
-        if (item) observer.unobserve(item);
+      // Use captured items for cleanup
+      currentItems.forEach(item => {
+        observer.unobserve(item);
       });
     };
   }, []);
