@@ -72,7 +72,7 @@ const Projects = () => {
     {
       id: 2,
       icon: FaRecycle,
-      title: 'Wasteless App | Real-Time Food Redistribution Marketplace',
+      title: 'Wasteless | RealTime Food Redistribution Marketplace',
       description: 'Platform connecting people to share near-expiry food (40% of household waste). Users snap photos to list items, buyers discover through geolocation. Built real-time WebSocket chat with message history and typing indicators. Implemented OAuth social login, role-based dashboards for buyers/sellers, and automatic image compression pipeline in Cloud Storage. Used Firestore denormalization for queries under 100ms and Cloud Functions to auto-expire old listings and send notifications. Server-side rendering with Next.js for better SEO.',
       tech: ['Next.js', 'Docker', 'Firebase', 'Firestore', 'Cloud Storage', 'Authentication', 'Cloud Functions', 'WebSocket', 'OAuth'],
       githubLink: 'https://github.com/replicant005'
@@ -96,7 +96,7 @@ const Projects = () => {
     {
       id: 5,
       icon: FaBook,
-      title: 'Outline Auditor | Multi-Course Academic Workload Analyzer',
+      title: 'Outline Auditor | Academic Workload Analyzer',
       description: 'Tool that reads course syllabi, extracts topics/assessments/outcomes using NLP and vision models, and stores them in PostgreSQL. Built a natural language interface where users can say "move midterm to week 9" and it updates everything with dependency checking. Creates heat maps and conflict reports across multiple courses to spot overloaded weeks and deadline clashes. AI suggests better assessment distribution based on best practices. Dockerized microservices for parsing, logic, and visualization.',
       tech: ['Python', 'FastAPI', 'Docker', 'Document AI APIs', 'PostgreSQL', 'React.js', 'D3.js', 'LangChain', 'NLP'],
       githubLink: 'https://github.com/replicant005'
@@ -104,7 +104,7 @@ const Projects = () => {
     {
       id: 6,
       icon: FaChartLine,
-      title: 'Analytics Dashboard | Unified Observability & Intelligent Bug Tracking',
+      title: 'Analytics Dashboard | Observability & Intelligent Bug Tracking',
       description: 'Monitoring platform that collects website analytics, error logs, and user sessions with Elasticsearch search across 10M+ logs. Built bug tracker with severity tags, automatic log attachments, and team workflows. Added ML-based pattern detection that spots recurring errors and suggests fixes. Microservices architecture with separate services for data ingestion, processing, and visualization. Integrated CloudWatch for infrastructure metrics and Chart.js for 20+ dashboard visualizations.',
       tech: ['React.js', 'Node.js', 'Docker', 'MongoDB', 'AWS CloudWatch', 'Elasticsearch', 'Chart.js', 'Microservices'],
       githubLink: 'https://github.com/replicant005'
