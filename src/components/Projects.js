@@ -1,9 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { 
+  FaShoppingCart, 
+  FaRecycle, 
+  FaMusic, 
+  FaCalendarAlt, 
+  FaBook, 
+  FaChartLine, 
+  FaLock 
+} from 'react-icons/fa';
+import { HiOutlineSparkles } from 'react-icons/hi2';
 
 const Projects = () => {
   const projectCardsRef = useRef([]);
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 3;
+  const [expandedProjects, setExpandedProjects] = useState({});
 
   useEffect(() => {
     const observerOptions = {
@@ -52,64 +63,59 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      icon: '🛒',
-      title: 'Buy The Best',
-      description: 'Full-stack e-commerce platform featuring product catalog, shopping cart, and secure checkout with Stripe integration. Built with React SPA frontend, Node.js/Express RESTful backend, MongoDB for product data, and integrated LLM-powered chatbot for product Q&A.',
-      tech: ['React', 'Node.js', 'MongoDB', 'AWS Lambda', 'Stripe'],
+      icon: FaShoppingCart,
+      title: 'Buy The Best | Full-Stack E-Commerce Platform',
+      description: 'Cloud-based electronics marketplace with product catalog, smart shopping cart, and secure Stripe checkout. Built an AI chatbot using OpenAI API that answers product questions and gives recommendations, cutting support tickets by 70%. Used serverless architecture (AWS Lambda + API Gateway) for auto-scaling and 99.9% uptime. Implemented JWT auth, optimized DynamoDB queries to under 50ms, and set up S3 CDN for fast image loading. Dockerized the whole stack for smooth deployments.',
+      tech: ['Next.js', 'Node.js', 'Docker', 'AWS Lambda', 'API Gateway', 'DynamoDB', 'Stripe API', 'OpenAI API', 'S3', 'JWT'],
       githubLink: 'https://github.com/replicant005'
     },
     {
       id: 2,
-      icon: '♻️',
-      title: 'Wasteless App',
-      description: 'Marketplace web application enabling users to list near-expiry food through image uploads for sale or donation. Implemented with React frontend, Node.js/Express backend, Firebase Realtime Database for live chat, AWS S3 for image storage, and Stripe payment processing.',
-      tech: ['React', 'Firebase', 'AWS S3', 'JWT', 'Stripe'],
+      icon: FaRecycle,
+      title: 'Wasteless App | Real-Time Food Redistribution Marketplace',
+      description: 'Platform connecting people to share near-expiry food (40% of household waste). Users snap photos to list items, buyers discover through geolocation. Built real-time WebSocket chat with message history and typing indicators. Implemented OAuth social login, role-based dashboards for buyers/sellers, and automatic image compression pipeline in Cloud Storage. Used Firestore denormalization for queries under 100ms and Cloud Functions to auto-expire old listings and send notifications. Server-side rendering with Next.js for better SEO.',
+      tech: ['Next.js', 'Docker', 'Firebase', 'Firestore', 'Cloud Storage', 'Authentication', 'Cloud Functions', 'WebSocket', 'OAuth'],
       githubLink: 'https://github.com/replicant005'
     },
     {
       id: 3,
-      icon: '🎵',
-      title: 'PaceMaker AI',
-      description: 'AI-powered audio generation service creating personalized running tracks by combining AI-generated music with motivational speech. Multi-agent workflow orchestrated using Google ADK coordinates music generation, text-to-speech conversion, and FFmpeg audio mixing.',
-      tech: ['Google Cloud', 'Cloud Run', 'TTS', 'FFmpeg', 'AI'],
-      githubLink: 'https://github.com/replicant005',
-      image: null
+      icon: FaMusic,
+      title: 'PaceMaker AI | Multi-Agent Audio Production System',
+      description: 'AI tool for runners that creates custom motivational audio. Two agents work together: Producer agent makes genre-specific music and converts text to speech, Sound Engineer agent mixes everything with FFmpeg and syncs to running pace. Used AWS Step Functions to coordinate agents with retry logic. Deployed as containerized microservices on Cloud Run with auto-scaling (0 to 100 instances), stored audio in S3, and distributed via CloudFront CDN. Optimized pipeline to generate 5-minute tracks in under 30 seconds.',
+      tech: ['Python', 'Docker', 'AWS Lambda', 'Cloud Run', 'Step Functions', 'FFmpeg', 'OpenAI TTS API', 'S3', 'CloudFront'],
+      githubLink: 'https://github.com/replicant005'
     },
     {
       id: 4,
-      icon: '📅',
-      title: 'Smart Scheduler',
-      description: 'AI-driven scheduling application with vision-based schedule extraction and conflict resolution. Integrates GPT-4 Vision for document parsing, LLM reasoning for constraint optimization, and React drag-and-drop UI for manual adjustments.',
-      tech: ['GPT-4 Vision', 'React', 'MongoDB', 'AWS EC2', 'S3'],
-      githubLink: 'https://github.com/replicant005',
-      image: null
+      icon: FaCalendarAlt,
+      title: 'Smart Scheduler | AI-Powered Visual Schedule Optimizer',
+      description: 'Smart calendar that reads schedule photos or forms, extracts tasks using vision and language models, then generates conflict-free timetables. Built drag-and-drop interface with live conflict warnings, priority-based rescheduling, and undo/redo. Combined LLM reasoning for understanding context with algorithms for constraint solving. Used MongoDB change streams for real-time updates, Redis cache to cut API times by 60%, and Lambda for async image processing.',
+      tech: ['React.js', 'Python', 'FastAPI', 'Docker', 'Google Vision API', 'Claude API', 'MongoDB', 'Redis', 'AWS Lambda'],
+      githubLink: 'https://github.com/replicant005'
     },
     {
       id: 5,
-      icon: '📚',
-      title: 'Outline Auditor',
-      description: 'Academic course outline management system with NLP-based document parsing and natural language update processing. Extracts structured data using GPT-4, stores in PostgreSQL, and performs constraint validation for multi-course workload analysis.',
-      tech: ['GPT-4', 'PostgreSQL', 'D3.js', 'Docker', 'AWS ECS'],
-      githubLink: 'https://github.com/replicant005',
-      image: null
+      icon: FaBook,
+      title: 'Outline Auditor | Multi-Course Academic Workload Analyzer',
+      description: 'Tool that reads course syllabi, extracts topics/assessments/outcomes using NLP and vision models, and stores them in PostgreSQL. Built a natural language interface where users can say "move midterm to week 9" and it updates everything with dependency checking. Creates heat maps and conflict reports across multiple courses to spot overloaded weeks and deadline clashes. AI suggests better assessment distribution based on best practices. Dockerized microservices for parsing, logic, and visualization.',
+      tech: ['Python', 'FastAPI', 'Docker', 'Document AI APIs', 'PostgreSQL', 'React.js', 'D3.js', 'LangChain', 'NLP'],
+      githubLink: 'https://github.com/replicant005'
     },
     {
       id: 6,
-      icon: '📊',
-      title: 'Analytics Dashboard',
-      description: 'Cloud-hosted observability platform tracking website analytics, error logs, and user behavior with integrated bug tracking system. Built with React/TypeScript frontend, Node.js/Express backend, TimescaleDB for time-series data, and Redis for caching.',
-      tech: ['TypeScript', 'TimescaleDB', 'Redis', 'Grafana', 'AWS'],
-      githubLink: 'https://github.com/replicant005',
-      image: null
+      icon: FaChartLine,
+      title: 'Analytics Dashboard | Unified Observability & Intelligent Bug Tracking',
+      description: 'Monitoring platform that collects website analytics, error logs, and user sessions with Elasticsearch search across 10M+ logs. Built bug tracker with severity tags, automatic log attachments, and team workflows. Added ML-based pattern detection that spots recurring errors and suggests fixes. Microservices architecture with separate services for data ingestion, processing, and visualization. Integrated CloudWatch for infrastructure metrics and Chart.js for 20+ dashboard visualizations.',
+      tech: ['React.js', 'Node.js', 'Docker', 'MongoDB', 'AWS CloudWatch', 'Elasticsearch', 'Chart.js', 'Microservices'],
+      githubLink: 'https://github.com/replicant005'
     },
     {
       id: 7,
-      icon: '🔒',
-      title: 'Shadow LLM',
-      description: 'Privacy-preserving AI training platform enabling secure model fine-tuning within private cloud environments without data exposure. Implements AWS Nitro Enclaves for secure computation, federated learning via Flower framework, and differential privacy mechanisms.',
-      tech: ['Python', 'PyTorch', 'Flower', 'AWS Nitro', 'HIPAA/GDPR'],
-      githubLink: 'https://github.com/replicant005',
-      image: null
+      icon: FaLock,
+      title: 'Shadow LLM | Privacy-Preserving Federated AI Platform',
+      description: 'Lets hospitals, banks, and law firms fine-tune AI models on sensitive data without exposing it. Organizations train locally and only share encrypted updates, never raw data. Used PySyft for federated learning, AWS Nitro Enclaves for secure computation with hardware verification, and differential privacy to prevent data reconstruction. Built automated compliance reports for HIPAA/SOC2/GDPR tracking data location and PII detection. Deployed on Kubernetes with encrypted communication and regional data controls.',
+      tech: ['Python', 'Docker', 'PySyft', 'AWS Nitro Enclaves', 'Kubernetes', 'Federated Learning', 'Differential Privacy'],
+      githubLink: 'https://github.com/replicant005'
     }
   ];
 
@@ -138,10 +144,20 @@ const Projects = () => {
     window.scrollTo({ top: document.getElementById('projects').offsetTop - 100, behavior: 'smooth' });
   };
 
+  const toggleExpand = (projectId) => {
+    setExpandedProjects(prev => ({
+      ...prev,
+      [projectId]: !prev[projectId]
+    }));
+  };
+
   return (
     <section id="projects" className="projects">
       <div className="container">
-        <h2 className="section-title">🌟 Featured Projects</h2>
+        <div className="section-header">
+          <HiOutlineSparkles className="section-title-icon" />
+          <h2 className="section-title">Featured Projects</h2>
+        </div>
         <p className="section-subtitle">Check out some of my recent work</p>
         <div className="projects-grid">
           {currentProjects.map((project, index) => {
@@ -152,13 +168,23 @@ const Projects = () => {
                 ref={el => projectCardsRef.current[actualIndex] = el}
                 className="project-card"
               >
-                <div className="project-image-container">
-                  <div className="project-image-placeholder">
-                    <div className="project-icon">{project.icon}</div>
+                <div className="project-icon-header">
+                  <div className="project-icon">
+                    {React.createElement(project.icon)}
                   </div>
+                  <h3>{project.title}</h3>
                 </div>
-                <h3>{project.title}</h3>
-                <p className="project-description">{project.description}</p>
+                <div className="project-description-wrapper">
+                  <p className={`project-description ${expandedProjects[project.id] ? 'expanded' : ''}`}>
+                    {project.description}
+                  </p>
+                  <button 
+                    className="expand-toggle"
+                    onClick={() => toggleExpand(project.id)}
+                  >
+                    {expandedProjects[project.id] ? 'Show Less' : 'Read More'}
+                  </button>
+                </div>
                 <div className="project-tech">
                   {project.tech.map((tech, i) => (
                     <span key={i} className="tech-tag">{tech}</span>

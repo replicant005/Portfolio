@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { HiOutlineEnvelope } from 'react-icons/hi2';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
   const contactCardsRef = useRef([]);
@@ -41,28 +43,28 @@ const Contact = () => {
   const contacts = [
     {
       id: 1,
-      icon: '📧',
+      icon: FaEnvelope,
       title: 'Email',
       info: 'mehakkapur200@gmail.com',
       link: 'mailto:mehakkapur200@gmail.com'
     },
     {
       id: 2,
-      icon: '📱',
+      icon: FaPhone,
       title: 'Phone',
       info: '(437) 460-6369',
       link: 'tel:+14374606369'
     },
     {
       id: 3,
-      icon: '💼',
+      icon: FaLinkedin,
       title: 'LinkedIn',
       info: 'Connect with me',
       link: 'https://www.linkedin.com/in/mhkkapur12'
     },
     {
       id: 4,
-      icon: '🐙',
+      icon: FaGithub,
       title: 'GitHub',
       info: 'Check out my code',
       link: 'https://github.com/replicant005'
@@ -72,7 +74,10 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2 className="section-title">📬 Get In Touch</h2>
+        <div className="section-header">
+          <HiOutlineEnvelope className="section-title-icon" />
+          <h2 className="section-title">Get In Touch</h2>
+        </div>
         <p className="section-subtitle">Let's connect and create something amazing together!</p>
         <div className="contact-cards">
           {contacts.map((contact, index) => (
@@ -84,7 +89,9 @@ const Contact = () => {
               rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
               className="contact-card"
             >
-              <div className="contact-icon">{contact.icon}</div>
+              <div className="contact-icon">
+                {React.createElement(contact.icon)}
+              </div>
               <h3>{contact.title}</h3>
               <p>{contact.info}</p>
             </a>

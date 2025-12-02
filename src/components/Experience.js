@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { HiOutlineBriefcase } from 'react-icons/hi2';
+import { FaChalkboardTeacher } from 'react-icons/fa';
 
 const Experience = () => {
   const timelineItemsRef = useRef([]);
@@ -41,26 +43,29 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      icon: '👨‍🏫',
+      icon: FaChalkboardTeacher,
+      title: 'Coding Instructor',
+      company: 'Best Brains',
+      date: 'Jan 2025 - Present',
+      description: 'Teach coding fundamentals to young learners using a structured curriculum like Scratch, Python, and basic web development. Guiding students through hands-on projects, helping them troubleshoot, and keeping parents informed of progress.'
+    },
+    {
+      id: 2,
+      icon: FaChalkboardTeacher,
       title: 'Tech Mentor (Volunteer)',
       company: 'Cyber-Seniors',
       date: 'Jan 2025 - Present',
       description: 'Communicate complex technical concepts to diverse audiences while troubleshooting various technical issues and developing educational resources tailored to individual learning needs.'
-    },
-    {
-      id: 2,
-      icon: '📱',
-      title: 'Social Media Manager and Content Creator (Volunteer)',
-      company: 'Paction, Toronto, ON',
-      date: 'April 2024 - Aug 2024',
-      description: 'Created engaging digital content increasing engagement by 30%, analyzed metrics for optimization, and maintained consistent brand voice while adapting to platform requirements.'
     }
   ];
 
   return (
     <section id="experience" className="experience">
       <div className="container">
-        <h2 className="section-title">💼 Experience</h2>
+        <div className="section-header">
+          <HiOutlineBriefcase className="section-title-icon" />
+          <h2 className="section-title">Experience</h2>
+        </div>
         <div className="experience-timeline">
           {experiences.map((exp, index) => (
             <div
@@ -68,7 +73,9 @@ const Experience = () => {
               ref={el => timelineItemsRef.current[index] = el}
               className="timeline-item"
             >
-              <div className="timeline-icon">{exp.icon}</div>
+              <div className="timeline-icon">
+                {React.createElement(exp.icon)}
+              </div>
               <div className="timeline-content">
                 <h3>{exp.title}</h3>
                 <p className="company">{exp.company}</p>
