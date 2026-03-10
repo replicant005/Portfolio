@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { HiOutlineBriefcase } from 'react-icons/hi2';
-import { FaChalkboardTeacher } from 'react-icons/fa';
+import { HiOutlineCodeBracket } from 'react-icons/hi2';
+import { FaLaptopCode } from 'react-icons/fa';
 
 const Experience = () => {
   const timelineItemsRef = useRef([]);
@@ -43,7 +43,7 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      icon: FaChalkboardTeacher,
+      icon: FaLaptopCode,
       title: 'Website Coordinator & Web Developer (Volunteer)',
       company: 'Rewriting the Code',
       date: 'May 2025 - Sept 2025',
@@ -51,7 +51,7 @@ const Experience = () => {
     },
     {
       id: 2,
-      icon: FaChalkboardTeacher,
+      icon: FaLaptopCode,
       title: 'Open Source Contributor',
       company: 'Various Projects',
       date: '',
@@ -63,7 +63,7 @@ const Experience = () => {
     <section id="experience" className="experience">
       <div className="container">
         <div className="section-header">
-          <HiOutlineBriefcase className="section-title-icon" />
+          <HiOutlineCodeBracket className="section-title-icon" />
           <h2 className="section-title">Experience</h2>
         </div>
         <div className="experience-timeline">

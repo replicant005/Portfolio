@@ -1,12 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { 
-  FaShoppingCart, 
-  FaRecycle, 
-  FaMusic, 
-  FaCalendarAlt, 
-  FaBook, 
-  FaChartLine, 
-  FaLock 
+import {
+  FaShieldAlt,
+  FaBook,
+  FaRobot,
+  FaCloud
 } from 'react-icons/fa';
 import { HiOutlineSparkles } from 'react-icons/hi2';
 
@@ -63,7 +60,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      icon: FaLock,
+      icon: FaShieldAlt,
       title: 'MCP Code Security Reviewer',
       description: 'Model Context Protocol (MCP) server that performs automated code security reviews by orchestrating static analysis (Bandit, Pylint) and LLM-based reasoning. Aggregates results into structured reports highlighting vulnerabilities, insecure patterns, and maintainability issues. Exposes analysis as callable tools for AI agents and editor integrations.',
       tech: ['Python', 'FastMCP', 'Docker', 'Bandit', 'Pylint', 'LLM Integration', 'REST APIs'],
@@ -79,7 +76,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      icon: FaMusic,
+      icon: FaRobot,
       title: 'Squill — AI SOP Assistant',
       description: 'Winner of UofT Hacks 13. Built by a team of 4, Squill is an AI-powered assistant that helps students write stronger Statements of Purpose through guided reflective prompts and structured feedback. I developed the backend using Flask streaming APIs and LangGraph to orchestrate LLM agents, enabling real-time AI interactions. Implemented Pydantic schema validation and streaming pipelines to ensure reliable outputs and reduce unpredictable LLM behavior.',
       tech: ['Flask', 'LangGraph', 'Cohere', 'Pydantic', 'Next.js', 'TypeScript'],
@@ -87,7 +84,7 @@ const Projects = () => {
     },
     {
       id: 4,
-      icon: FaChartLine,
+      icon: FaCloud,
       title: 'Additional AI & Cloud Projects',
       description: 'Various production-style projects focused on RAG pipelines, document parsing, serverless APIs, and scalable deployments on AWS. Implementations include streaming APIs, Dockerized services, and monitoring/observability integrations.',
       tech: ['RAG', 'AWS', 'Docker', 'FastAPI', 'React'],
