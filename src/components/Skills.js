@@ -51,30 +51,28 @@ const Skills = () => {
       id: 1,
       icon: FaCode,
       title: 'Languages, Frameworks & Databases',
-      skills: ['Python', 'JavaScript/TypeScript', 'SQL', 'React.js', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Responsive Design', 'Node.js', 'Express.js', 'FastAPI', 'RESTful APIs', 'Serverless Functions', 'MongoDB', 'DynamoDB', 'Firestore', 'PostgreSQL', 'Redis', 'Elasticsearch']
+      skills: ['Python', 'JavaScript/TypeScript', 'Java', 'SQL', 'React', 'Next.js', 'Node.js', 'Express', 'Flask', 'FastAPI', 'Pydantic', 'PostgreSQL', 'MongoDB', 'DynamoDB']
     },
     {
       id: 2,
       icon: FaCloud,
       title: 'Cloud & DevOps',
       skills: [
-        'AWS: Lambda', 'API Gateway', 'S3', 'DynamoDB', 'CloudWatch', 'Step Functions', 'CloudFront', 'SNS', 'SQS', 'EventBridge', 'ECS', 'ECR', 'Nitro Enclaves', 'CloudFormation', 'IAM', 'Route53', 'ELB/ALB', 'Secrets Manager',
-        'Google Cloud: Cloud Run', 'Cloud Functions', 'Firestore', 'Cloud Storage', 'Pub/Sub', 'Cloud Build', 'Cloud IAM', 'Vertex AI',
-        'Firebase: Firestore', 'Cloud Storage', 'Authentication', 'Cloud Functions', 'Hosting',
-        'Infrastructure: Docker', 'Kubernetes', 'Container Orchestration', 'CI/CD Pipelines', 'Git/GitHub', 'Microservices', 'Serverless Architecture', 'Event-Driven Architecture', 'Cloud-Native Design'
+        'AWS (Lambda, S3, API Gateway, Step Functions, CloudWatch)', 'ECS/ECR', 'CloudFront', 'AWS Nitro Enclaves',
+        'Docker', 'Docker Compose', 'Kubernetes', 'CI/CD', 'Git/GitHub', 'Serverless Architecture', 'Microservices'
       ]
     },
     {
       id: 3,
       icon: FaRobot,
-      title: 'AI/ML & Integration',
-      skills: ['OpenAI API', 'Anthropic Claude API', 'Google Gemini', 'LangChain', 'Agent Orchestration', 'Prompt Engineering', 'Text-to-Speech APIs', 'Vision Models', 'Document Parsing']
+      title: 'AI & LLM Integration',
+      skills: ['LLM Integration (OpenAI, Cohere, Anthropic)', 'LangChain', 'Agent Orchestration', 'RAG Pipelines', 'Prompt Engineering', 'Document Parsing', 'TTS / Streaming APIs']
     },
     {
       id: 4,
       icon: FaTools,
-      title: 'Design & Development',
-      skills: ['Figma', 'Wireframing', 'Prototyping', 'SDLC', 'Agile/Scrum', 'Test-Driven Development (TDD)', 'System Design', 'Requirements Analysis', 'Microservices Architecture', 'Event-Driven Design', 'API Design Patterns', 'WebSocket/Real-time Communication', 'Authentication (OAuth, JWT)', 'Payment Integration (Stripe)']
+      title: 'Practices & Tools',
+      skills: ['System Design', 'REST APIs', 'JWT Authentication', 'RBAC', 'Unit Testing (Pytest)', 'Agile', 'Observability', 'Schema Validation (Pydantic)', 'Payment Integration (Stripe)']
     }
   ];
 

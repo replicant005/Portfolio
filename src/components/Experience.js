@@ -44,18 +44,18 @@ const Experience = () => {
     {
       id: 1,
       icon: FaChalkboardTeacher,
-      title: 'Coding Instructor',
-      company: 'Best Brains',
-      date: 'Jan 2025 - Present',
-      description: 'Teach coding fundamentals to young learners using a structured curriculum like Scratch, Python, and basic web development. Guiding students through hands-on projects, helping them troubleshoot, and keeping parents informed of progress.'
+      title: 'Website Coordinator & Web Developer (Volunteer)',
+      company: 'Rewriting the Code',
+      date: 'May 2025 - Sept 2025',
+      description: 'Developed and deployed website features used by 1,500+ users; maintained WCAG accessibility and responsive design. Implemented SEO and performance optimizations reducing page load time by 25%. Built content management and deployment workflows with QA testing, achieving high production reliability.'
     },
     {
       id: 2,
       icon: FaChalkboardTeacher,
-      title: 'Tech Mentor (Volunteer)',
-      company: 'Cyber-Seniors',
-      date: 'Jan 2025 - Present',
-      description: 'Communicate complex technical concepts to diverse audiences while troubleshooting various technical issues and developing educational resources tailored to individual learning needs.'
+      title: 'Open Source Contributor',
+      company: 'Various Projects',
+      date: '',
+      description: 'Contributed to Next.js starter templates and open-source tooling: improved onboarding, added reusable layout components, and resolved JavaScript/TypeScript build issues across environments.'
     }
   ];
 

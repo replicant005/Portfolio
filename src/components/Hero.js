@@ -48,10 +48,9 @@ const Hero = () => {
             </div>
           </div>
           <h1 className="name">Mehak Kapur</h1>
-          <p className="tagline">Aspiring Cloud Engineer & AI Enthusiast</p>
+          <p className="tagline">Building secure, scalable, and cost-efficient AI solutions</p>
           <p className="description">
-           Building cloud-native applications with AI integration through hands-on projects. 
-          Passionate about designing scalable, serverless solutions that solve real-world business challenges.
+            Building practical AI systems and scalable backend applications. My work explores how large language models can be integrated into real software systems while maintaining reliability, security, and cost efficiency. I enjoy designing architectures that combine cloud infrastructure, modern web technologies, and applied AI to create production-ready tools that solve real problems.
           </p>
           <div className="hero-buttons">
             <button onClick={() => scrollToSection('projects')} className="btn btn-primary">
